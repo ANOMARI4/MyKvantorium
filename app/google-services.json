@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "101639135977",
+    "firebase_url": "https://my-kvantorium.firebaseio.com",
+    "project_id": "my-kvantorium",
+    "storage_bucket": "my-kvantorium.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101639135977:android:9aa6d190628661c7970678",
+        "android_client_info": {
+          "package_name": "com.mykvantorium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101639135977-epg6olj5e1eiainp3mg0dine444dmijr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mykvantorium",
+            "certificate_hash": "e34605ffb325b8f1186fbc52ee97685f6fb35a41"
+          }
+        },
+        {
+          "client_id": "101639135977-trnrbfgu7rbii7kut7im95m7a3lb9t8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX88t6SfiECDvFDWITv2BvIpMx8mLr0Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101639135977-trnrbfgu7rbii7kut7im95m7a3lb9t8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

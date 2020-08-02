@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Мой Кванториум</string>
+    <string name="title_news">Новости</string>
+    <string name="title_menu">Меню</string>
+    <string name="phone">+7 (474) 256-61-05</string>
+    <string name="web">http://kvantorium48.ru/</string>
+    <string name="address">ул. Космонавтов, 20/3, Липецк</string>
+    <string name="title_task">Планировщик задач</string>
+    <string name="title_progress">Успеваемость</string>
+    <string-array name="time">
+        <item>Сегодня</item>
+        <item>Завтра</item>
+        <item>Предстоящие</item>
+        <item>Без срока</item>
+    </string-array>
+</resources>
