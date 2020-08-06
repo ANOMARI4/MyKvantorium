@@ -1,6 +1,5 @@
 package com.mykvantorium.ui.task;
 
-import android.view.ContextMenu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
