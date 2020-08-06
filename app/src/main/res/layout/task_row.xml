@@ -22,10 +22,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginRight="50dp"
             android:fontFamily="@font/ttcommonslight"
             android:text="Название задачи"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp" />
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/taskDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="false"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cancel" />
+
+    </FrameLayout>
 </androidx.cardview.widget.CardView>

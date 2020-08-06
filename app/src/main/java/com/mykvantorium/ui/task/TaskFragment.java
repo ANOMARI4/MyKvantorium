@@ -31,13 +31,17 @@ import com.mykvantorium.R;
 
 public class TaskFragment extends Fragment implements View.OnClickListener {
 
-    private int t = 0;
-    private String time[] = {"Сегодня", "Завтра", "Предстоящие", "Без срока"};
-    private FirebaseRecyclerAdapter<TaskModel, TaskViewHolder> adapter;
-    private FirebaseRecyclerOptions<TaskModel> options;
+    private FirebaseRecyclerAdapter<TaskModel, TaskViewHolder> todayAdapter;
+    private FirebaseRecyclerOptions<TaskModel> todayOptions;
+    private FirebaseRecyclerAdapter<TaskModel, TaskViewHolder> tomorrowAdapter;
+    private FirebaseRecyclerOptions<TaskModel> tomorrowOptions;
+    private FirebaseRecyclerAdapter<TaskModel, TaskViewHolder> comingAdapter;
+    private FirebaseRecyclerOptions<TaskModel> comingOptions;
+    private FirebaseRecyclerAdapter<TaskModel, TaskViewHolder> unlimitedAdapter;
+    private FirebaseRecyclerOptions<TaskModel> unlimitedOptions;
     private FloatingActionButton buttonAddTask;
     private FirebaseDatabase database;
-    private DatabaseReference taskDb;
+    private DatabaseReference taskDb, todayTaskDb, tomorrowTaskDb, comingTaskDb, unlimitedTaskDb;
     private FirebaseUser currentUser;
     private RecyclerView todayTaskView, tomorrowTaskView, comingTaskView, unlimitedTaskView;
     private FirebaseAuth mAuth;
@@ -62,31 +66,92 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         comingTaskView.setLayoutManager(new LinearLayoutManager(getContext()));
         unlimitedTaskView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        showTask();
+        showTodayTask();
+        showTomorrowTask();
+        showComingTask();
+        showUnlimitedTask();
 
         return root;
     }
 
-    private void showTask() {
-        for (t = 0; t < 4; t++) {
-            taskDb = database.getReference(currentUser.getUid() + "/" + time[0]);
-            options = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(taskDb, TaskModel.class).build();
-            adapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(options) {
-                @Override
-                protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
-                    taskViewHolder.taskName.setText(taskModel.getTaskName());
-                    taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
-                }
+    private void showTodayTask() {
+        todayTaskDb = database.getReference(currentUser.getUid() + "/" + "Сегодня");
+        todayOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(todayTaskDb, TaskModel.class).build();
+        todayAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(todayOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+                taskViewHolder.taskName.setText(taskModel.getTaskName());
+                taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+            }
 
-                @NonNull
-                @Override
-                public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                    View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row, parent, false);
-                    return new TaskViewHolder(itemView);
-                }
-            };
-            todayTaskView.setAdapter(adapter);
-        }
+            @NonNull
+            @Override
+            public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row, parent, false);
+                return new TaskViewHolder(itemView);
+            }
+        };
+        todayTaskView.setAdapter(todayAdapter);
+    }
+
+    private void showTomorrowTask() {
+        tomorrowTaskDb = database.getReference(currentUser.getUid() + "/" + "Завтра");
+        tomorrowOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(tomorrowTaskDb, TaskModel.class).build();
+        tomorrowAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(tomorrowOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+                taskViewHolder.taskName.setText(taskModel.getTaskName());
+                taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+            }
+
+            @NonNull
+            @Override
+            public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row, parent, false);
+                return new TaskViewHolder(itemView);
+            }
+        };
+        tomorrowTaskView.setAdapter(tomorrowAdapter);
+    }
+
+    private void showComingTask() {
+        comingTaskDb = database.getReference(currentUser.getUid() + "/" + "Предстоящие");
+        comingOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(comingTaskDb, TaskModel.class).build();
+        comingAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(comingOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+                taskViewHolder.taskName.setText(taskModel.getTaskName());
+                taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+            }
+
+            @NonNull
+            @Override
+            public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row, parent, false);
+                return new TaskViewHolder(itemView);
+            }
+        };
+        comingTaskView.setAdapter(comingAdapter);
+    }
+
+    private void showUnlimitedTask() {
+        unlimitedTaskDb = database.getReference(currentUser.getUid() + "/" + "Без срока");
+        unlimitedOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(unlimitedTaskDb, TaskModel.class).build();
+        unlimitedAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(unlimitedOptions) {
+            @Override
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+                taskViewHolder.taskName.setText(taskModel.getTaskName());
+                taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+            }
+
+            @NonNull
+            @Override
+            public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_row, parent, false);
+                return new TaskViewHolder(itemView);
+            }
+        };
+        unlimitedTaskView.setAdapter(unlimitedAdapter);
     }
 
     @Override
@@ -142,7 +207,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @Override
+    /*@Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         if (item.getTitle().equals("Редактировать")) {
             showUpdateDialog(adapter.getRef(item.getOrder()).getKey(), adapter.getItem(item.getOrder()));
@@ -159,17 +224,23 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showUpdateDialog(String key, TaskModel item) {
-    }
+    }*/
 
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        todayAdapter.startListening();
+        tomorrowAdapter.startListening();
+        comingAdapter.startListening();
+        unlimitedAdapter.startListening();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        adapter.stopListening();
+        todayAdapter.stopListening();
+        tomorrowAdapter.stopListening();
+        comingAdapter.stopListening();
+        unlimitedAdapter.stopListening();
     }
 }
