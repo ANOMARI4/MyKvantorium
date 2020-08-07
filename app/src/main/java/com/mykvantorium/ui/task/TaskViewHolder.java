@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mykvantorium.R;
 
-public class TaskViewHolder extends RecyclerView.ViewHolder /*implements View.OnCreateContextMenuListener*/ {
+public class TaskViewHolder extends RecyclerView.ViewHolder {
 
     public TextView taskName;
     public CheckBox taskCheckBox;
@@ -21,12 +21,6 @@ public class TaskViewHolder extends RecyclerView.ViewHolder /*implements View.On
         taskName = itemView.findViewById(R.id.taskName);
         taskCheckBox = itemView.findViewById(R.id.taskCheckbox);
         taskDeleteButton = itemView.findViewById(R.id.taskDeleteButton);
-        /*itemView.setOnCreateContextMenuListener(this);*/
-    }
 
-    /*@Override
-    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-        contextMenu.setHeaderTitle("Меню действий");
-        contextMenu.add(0, 0, getAdapterPosition(), "Удалить");
-    }*/
+    }
 }

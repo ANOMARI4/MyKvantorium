@@ -81,6 +81,18 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // change checkbox state
+                    }
+                });
+                taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // delete task
+                    }
+                });
             }
 
             @NonNull
@@ -101,6 +113,18 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // change checkbox state
+                    }
+                });
+                taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // delete task
+                    }
+                });
             }
 
             @NonNull
@@ -121,6 +145,18 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // change checkbox state
+                    }
+                });
+                taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // delete task
+                    }
+                });
             }
 
             @NonNull
@@ -141,6 +177,18 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // change checkbox state
+                    }
+                });
+                taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // delete task
+                    }
+                });
             }
 
             @NonNull
@@ -205,25 +253,6 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
-    /*@Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        if (item.getTitle().equals("Редактировать")) {
-            showUpdateDialog(adapter.getRef(item.getOrder()).getKey(), adapter.getItem(item.getOrder()));
-        } else if (item.getTitle().equals("Удалить")) {
-            deleteTask(adapter.getRef(item.getOrder()).getKey());
-            Toast.makeText(getContext(), "Задача удалена", Toast.LENGTH_SHORT).show();
-        }
-        return super.onContextItemSelected(item);
-    }
-
-    private void deleteTask(String key) {
-        taskDb = database.getReference(currentUser.getUid());
-        taskDb.child(key).removeValue();
-    }
-
-    private void showUpdateDialog(String key, TaskModel item) {
-    }*/
 
     @Override
     public void onStart() {
