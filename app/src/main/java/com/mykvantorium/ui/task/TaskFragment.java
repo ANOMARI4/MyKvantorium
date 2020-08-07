@@ -77,20 +77,22 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         todayTaskDb = database.getReference(currentUser.getUid() + "/" + "Сегодня");
         todayOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(todayTaskDb, TaskModel.class).build();
         todayAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(todayOptions) {
-            @Override
-            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // change checkbox state
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.child("checkbox").setValue(!taskModel.isCheckbox());
                     }
                 });
                 taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // delete task
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.removeValue();
+                        Toast.makeText(getContext(), "Задача удалена", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -110,19 +112,22 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         tomorrowOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(tomorrowTaskDb, TaskModel.class).build();
         tomorrowAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(tomorrowOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // change checkbox state
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.child("checkbox").setValue(!taskModel.isCheckbox());
                     }
                 });
                 taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // delete task
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.removeValue();
+                        Toast.makeText(getContext(), "Задача удалена", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -142,19 +147,22 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         comingOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(comingTaskDb, TaskModel.class).build();
         comingAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(comingOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // change checkbox state
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.child("checkbox").setValue(!taskModel.isCheckbox());
                     }
                 });
                 taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // delete task
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.removeValue();
+                        Toast.makeText(getContext(), "Задача удалена", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -174,19 +182,22 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
         unlimitedOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(unlimitedTaskDb, TaskModel.class).build();
         unlimitedAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(unlimitedOptions) {
             @Override
-            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, int i, @NonNull TaskModel taskModel) {
+            protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // change checkbox state
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.child("checkbox").setValue(!taskModel.isCheckbox());
                     }
                 });
                 taskViewHolder.taskDeleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // delete task
+                        DatabaseReference itemRef = getRef(i);
+                        itemRef.removeValue();
+                        Toast.makeText(getContext(), "Задача удалена", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
