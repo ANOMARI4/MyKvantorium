@@ -28,6 +28,48 @@
             android:layout_marginEnd="8dp"
             android:background="@android:color/background_dark" />
 
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/ttcommonsreg"
+            android:gravity="center"
+            android:text="..."
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ttcommonslight"
+            android:gravity="center"
+            android:text="..."
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/ttcommonslight"
+            android:gravity="center"
+            android:text="Ваш рейтинг на данный момент: "
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </FrameLayout>

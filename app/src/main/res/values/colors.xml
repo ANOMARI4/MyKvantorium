@@ -3,5 +3,4 @@
     <color name="colorPrimary">#2E4B59</color>
     <color name="colorPrimaryDark">#152126</color>
     <color name="colorAccent">#202020</color>
-    <color name="colorBottomNavigationView">#F1F7FF</color>
 </resources>

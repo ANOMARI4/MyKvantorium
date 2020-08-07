@@ -22,7 +22,6 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         android:theme="@style/Widget.BottomNavigationView"
-        app:itemBackground="@color/colorBottomNavigationView"
         app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
         app:menu="@menu/bottom_nav_menu" />
