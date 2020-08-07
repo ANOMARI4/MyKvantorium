@@ -74,7 +74,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showTodayTask() {
-        todayTaskDb = database.getReference(currentUser.getUid() + "/" + "Сегодня");
+        todayTaskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "Сегодня");
         todayOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(todayTaskDb, TaskModel.class).build();
         todayAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(todayOptions) {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
@@ -108,7 +108,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showTomorrowTask() {
-        tomorrowTaskDb = database.getReference(currentUser.getUid() + "/" + "Завтра");
+        tomorrowTaskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "Завтра");
         tomorrowOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(tomorrowTaskDb, TaskModel.class).build();
         tomorrowAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(tomorrowOptions) {
             @Override
@@ -143,7 +143,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showComingTask() {
-        comingTaskDb = database.getReference(currentUser.getUid() + "/" + "Предстоящие");
+        comingTaskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "Предстоящие");
         comingOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(comingTaskDb, TaskModel.class).build();
         comingAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(comingOptions) {
             @Override
@@ -178,7 +178,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showUnlimitedTask() {
-        unlimitedTaskDb = database.getReference(currentUser.getUid() + "/" + "Без срока");
+        unlimitedTaskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "Без срока");
         unlimitedOptions = new FirebaseRecyclerOptions.Builder<TaskModel>().setQuery(unlimitedTaskDb, TaskModel.class).build();
         unlimitedAdapter = new FirebaseRecyclerAdapter<TaskModel, TaskViewHolder>(unlimitedOptions) {
             @Override
@@ -244,7 +244,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
                                 String taskName = editTextTaskName.getText().toString();
                                 String taskTime = spinnerTime.getSelectedItem().toString();
                                 TaskModel taskModel = new TaskModel(taskName, taskTime, false);
-                                taskDb = database.getReference(currentUser.getUid() + "/" + taskTime);
+                                taskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + taskTime);
                                 taskDb.push().setValue(taskModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {

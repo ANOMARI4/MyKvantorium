@@ -30,7 +30,7 @@ public class NewsFragment extends Fragment {
         newsRecyclerView = root.findViewById(R.id.newsRecyclerView);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         newsFirebaseDatabase = FirebaseDatabase.getInstance();
-        newsRef = newsFirebaseDatabase.getReference("Data");
+        newsRef = newsFirebaseDatabase.getReference("News");
 
         showNews();
 
