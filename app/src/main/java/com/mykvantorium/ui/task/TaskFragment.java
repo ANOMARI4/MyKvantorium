@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +26,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mykvantorium.R;
+import com.webianks.library.scroll_choice.ScrollChoice;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TaskFragment extends Fragment implements View.OnClickListener {
 
@@ -219,7 +222,13 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View mView = getLayoutInflater().inflate(R.layout.dialog_task, null);
                 final EditText editTextTaskName = mView.findViewById(R.id.editTextTaskName);
-                final Spinner spinnerTime = mView.findViewById(R.id.spinnerTime);
+                final ScrollChoice scrollChoiceTime = mView.findViewById(R.id.scrollChoiceTime);
+                List<String> time = new ArrayList<>();
+                time.add("Сегодня");
+                time.add("Завтра");
+                time.add("Предстоящие");
+                time.add("Без срока");
+                scrollChoiceTime.addItems(time, 0);
                 Button save = mView.findViewById(R.id.buttonSave);
                 Button cancel = mView.findViewById(R.id.buttonCancel);
                 builder.setView(mView);
@@ -242,7 +251,7 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
                         switch (view.getId()) {
                             case R.id.buttonSave:
                                 String taskName = editTextTaskName.getText().toString();
-                                String taskTime = spinnerTime.getSelectedItem().toString();
+                                String taskTime = scrollChoiceTime.getCurrentSelection();
                                 TaskModel taskModel = new TaskModel(taskName, taskTime, false);
                                 taskDb = database.getReference("Users" + "/" + currentUser.getUid() + "/" + taskTime);
                                 taskDb.push().setValue(taskModel).addOnSuccessListener(new OnSuccessListener<Void>() {

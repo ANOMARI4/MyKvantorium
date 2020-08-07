@@ -7,10 +7,4 @@
     <string name="address">ул. Космонавтов, 20/3, Липецк</string>
     <string name="title_task">Планировщик задач</string>
     <string name="title_progress">Успеваемость</string>
-    <string-array name="time">
-        <item>Сегодня</item>
-        <item>Завтра</item>
-        <item>Предстоящие</item>
-        <item>Без срока</item>
-    </string-array>
 </resources>
