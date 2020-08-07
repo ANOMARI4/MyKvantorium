@@ -51,10 +51,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Сегодня"
-                    android:textColor="@android:color/black"
+                    android:textColor="#1878DD"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -69,10 +71,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Завтра"
-                    android:textColor="@android:color/black"
+                    android:textColor="#1878DD"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -87,10 +91,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Предстоящие"
-                    android:textColor="@android:color/black"
+                    android:textColor="#1878DD"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -105,10 +111,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Без срока"
-                    android:textColor="@android:color/black"
+                    android:textColor="#1878DD"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
