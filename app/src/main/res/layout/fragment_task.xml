@@ -56,7 +56,7 @@
                     android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Сегодня"
-                    android:textColor="#1878DD"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -76,7 +76,7 @@
                     android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Завтра"
-                    android:textColor="#1878DD"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
                     android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Предстоящие"
-                    android:textColor="#1878DD"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -116,7 +116,7 @@
                     android:layout_marginRight="8dp"
                     android:fontFamily="@font/ttcommonsreg"
                     android:text="Без срока"
-                    android:textColor="#1878DD"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
