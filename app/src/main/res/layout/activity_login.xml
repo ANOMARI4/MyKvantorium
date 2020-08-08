@@ -62,6 +62,7 @@
                 android:fontFamily="@font/ttcommonsbold"
                 android:hint="Адрес электронной почты"
                 android:inputType="textEmailAddress"
+                android:textColor="#B3F9F9F9"
                 android:textColorHint="#B3F9F9F9" />
 
 
@@ -79,6 +80,7 @@
                 android:fontFamily="@font/ttcommonsbold"
                 android:hint="Пароль"
                 android:inputType="textPassword"
+                android:textColor="#B3F9F9F9"
                 android:textColorHint="#B3F9F9F9" />
 
         </LinearLayout>

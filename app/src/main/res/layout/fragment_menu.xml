@@ -45,10 +45,11 @@
             android:autoLink="phone"
             android:drawableLeft="@drawable/ic_phone"
             android:drawablePadding="10dp"
-            android:fontFamily="@font/ttcommonsmed"
+            android:fontFamily="@font/ttcommonsbold"
             android:gravity="center|left"
             android:text="@string/phone"
-            android:textColorLink="@android:color/black" />
+            android:textColorLink="@android:color/black"
+            android:textSize="18dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -57,10 +58,11 @@
             android:autoLink="web"
             android:drawableLeft="@drawable/ic_web"
             android:drawablePadding="10dp"
-            android:fontFamily="@font/ttcommonsmed"
+            android:fontFamily="@font/ttcommonsbold"
             android:gravity="center|left"
             android:text="@string/web"
-            android:textColorLink="@android:color/black" />
+            android:textColorLink="@android:color/black"
+            android:textSize="18dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -71,10 +73,11 @@
             android:autoLink="web"
             android:drawableLeft="@drawable/ic_point"
             android:drawablePadding="14dp"
-            android:fontFamily="@font/ttcommonsmed"
+            android:fontFamily="@font/ttcommonsbold"
             android:gravity="center|left"
             android:text="@string/address"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
 
         <fragment
             android:id="@+id/map"
