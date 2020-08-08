@@ -19,7 +19,6 @@ import com.mykvantorium.R;
 public class NewsFragment extends Fragment {
 
     private RecyclerView newsRecyclerView;
-    private FirebaseDatabase newsFirebaseDatabase;
     private DatabaseReference newsRef;
     private FirebaseRecyclerAdapter<NewsModel, NewsViewHolder> adapter;
     private FirebaseRecyclerOptions<NewsModel> options;
@@ -29,7 +28,7 @@ public class NewsFragment extends Fragment {
 
         newsRecyclerView = root.findViewById(R.id.newsRecyclerView);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        newsFirebaseDatabase = FirebaseDatabase.getInstance();
+        FirebaseDatabase newsFirebaseDatabase = FirebaseDatabase.getInstance();
         newsRef = newsFirebaseDatabase.getReference("News");
 
         showNews();
@@ -52,9 +51,7 @@ public class NewsFragment extends Fragment {
                 return new NewsViewHolder(itemView);
             }
         };
-        adapter.startListening();
         newsRecyclerView.setAdapter(adapter);
-        adapter.stopListening();
     }
 
     @Override

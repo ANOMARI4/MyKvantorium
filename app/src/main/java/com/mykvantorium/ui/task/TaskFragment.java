@@ -2,6 +2,7 @@ package com.mykvantorium.ui.task;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -83,6 +84,9 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                if (taskModel.isCheckbox()) {
+                    taskViewHolder.taskName.setPaintFlags(taskViewHolder.taskName.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                }
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -118,6 +122,9 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                if (taskModel.isCheckbox()) {
+                    taskViewHolder.taskName.setPaintFlags(taskViewHolder.taskName.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                }
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -153,6 +160,9 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                if (taskModel.isCheckbox()) {
+                    taskViewHolder.taskName.setPaintFlags(taskViewHolder.taskName.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                }
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -188,6 +198,9 @@ public class TaskFragment extends Fragment implements View.OnClickListener {
             protected void onBindViewHolder(@NonNull TaskViewHolder taskViewHolder, final int i, @NonNull final TaskModel taskModel) {
                 taskViewHolder.taskName.setText(taskModel.getTaskName());
                 taskViewHolder.taskCheckBox.setChecked(taskModel.isCheckbox());
+                if (taskModel.isCheckbox()) {
+                    taskViewHolder.taskName.setPaintFlags(taskViewHolder.taskName.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                }
                 taskViewHolder.taskCheckBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

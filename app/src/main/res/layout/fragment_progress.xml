@@ -40,6 +40,14 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/progressRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="87dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -52,7 +60,7 @@
             android:id="@+id/textViewRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ttcommonslight"
+            android:fontFamily="@font/ttcommonsbold"
             android:gravity="center"
             android:text="..."
             android:textColor="@color/colorPrimaryDark"
