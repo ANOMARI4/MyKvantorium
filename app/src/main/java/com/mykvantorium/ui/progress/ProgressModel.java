@@ -1,8 +1,7 @@
 package com.mykvantorium.ui.progress;
 
 public class ProgressModel {
-    String date;
-    int score;
+    String date, score;
 
     public ProgressModel() {
     }
@@ -15,11 +14,11 @@ public class ProgressModel {
         this.date = date;
     }
 
-    public Integer getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(String score) {
         this.score = score;
     }
 }

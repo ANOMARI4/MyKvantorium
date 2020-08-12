@@ -29,7 +29,7 @@ public class ProgressFragment extends Fragment {
     private FirebaseUser currentUser;
     private DatabaseReference progressDb;
 
-    private TextView textViewName, textViewRating;
+    private TextView textViewName, textViewRating, textViewTotal, textViewSum, textViewVisited;
 
     private RecyclerView progressRecyclerView;
     private FirebaseRecyclerAdapter<ProgressModel, ProgressViewHolder> adapter;
@@ -44,6 +44,9 @@ public class ProgressFragment extends Fragment {
 
         textViewName = root.findViewById(R.id.textViewName);
         textViewRating = root.findViewById(R.id.textViewRating);
+        textViewTotal = root.findViewById(R.id.textViewTotal);
+        textViewSum = root.findViewById(R.id.textViewSum);
+        textViewVisited = root.findViewById(R.id.textViewVisited);
 
         progressRecyclerView = root.findViewById(R.id.progressRecyclerView);
         progressRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -51,8 +54,6 @@ public class ProgressFragment extends Fragment {
         showName();
 
         showProgress();
-
-        showRating();
 
         return root;
     }
@@ -78,7 +79,19 @@ public class ProgressFragment extends Fragment {
         adapter = new FirebaseRecyclerAdapter<ProgressModel, ProgressViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProgressViewHolder viewHolder, int i, @NonNull ProgressModel model) {
+                textViewTotal.setText(String.valueOf(Integer.parseInt(textViewTotal.getText().toString()) + 1));
+                if (model.getScore() == null)
+                    model.setScore("Не был");
+                else {
+                    textViewSum.setText(String.valueOf(Integer.parseInt(textViewSum.getText().toString()) + Integer.parseInt(model.getScore())));
+                    textViewVisited.setText(String.valueOf(Integer.parseInt(textViewVisited.getText().toString()) + 1));
+                }
                 viewHolder.setDetails(getContext(), model.getDate(), model.getScore());
+                try {
+                    String formattedDouble = String.format("%.2f", Double.parseDouble(textViewSum.getText().toString()) / Double.parseDouble(textViewTotal.getText().toString()));
+                    textViewRating.setText(formattedDouble);
+                } catch (ArithmeticException ignored) {
+                }
             }
 
             @NonNull
@@ -89,34 +102,6 @@ public class ProgressFragment extends Fragment {
             }
         };
         progressRecyclerView.setAdapter(adapter);
-    }
-
-    public void showRating() {
-        DatabaseReference sumRef = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "progress" + "/" + "rating" + "/" + "0").child("scoreSum");
-        sumRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Integer value = dataSnapshot.getValue(Integer.class);
-                textViewRating.setText(String.valueOf(value));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-            }
-        });
-
-        DatabaseReference totalRef = database.getReference("Users" + "/" + currentUser.getUid() + "/" + "progress" + "/" + "rating" + "/" + "0").child("total");
-        totalRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Integer value = dataSnapshot.getValue(Integer.class);
-                textViewRating.setText(String.valueOf(Integer.parseInt(textViewRating.getText().toString()) / value));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-            }
-        });
     }
 
     @Override

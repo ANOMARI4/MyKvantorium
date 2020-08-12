@@ -18,10 +18,10 @@ public class ProgressViewHolder extends RecyclerView.ViewHolder {
         progressView = itemView;
     }
 
-    public void setDetails(Context context, String date, Integer score) {
+    public void setDetails(Context context, String date, String score) {
         TextView progressDate = progressView.findViewById(R.id.progressDate);
         TextView progressScore = progressView.findViewById(R.id.progressScore);
         progressDate.setText(date);
-        progressScore.setText(score.toString());
+        progressScore.setText(score);
     }
 }
