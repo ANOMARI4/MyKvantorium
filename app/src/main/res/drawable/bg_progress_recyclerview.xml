@@ -5,8 +5,4 @@
         android:endColor="@android:color/white"
         android:startColor="@android:color/white" />
 
-    <corners
-        android:topLeftRadius="60dp"
-        android:topRightRadius="60dp" />
-
 </shape>
