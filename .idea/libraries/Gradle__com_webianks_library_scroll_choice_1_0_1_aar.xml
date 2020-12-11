@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.webianks.library:scroll-choice:1.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/413a354fcab4e90c82d9236466f3cab3/jetified-scroll-choice-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/413a354fcab4e90c82d9236466f3cab3/jetified-scroll-choice-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/413a354fcab4e90c82d9236466f3cab3/jetified-scroll-choice-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2961221929b690ab22c6e8f6530afde4/jetified-scroll-choice-1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2961221929b690ab22c6e8f6530afde4/jetified-scroll-choice-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2961221929b690ab22c6e8f6530afde4/jetified-scroll-choice-1.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.webianks.library/scroll-choice/1.0.1/f81dfa4cdc5e67dcc3592b2f5379cb12b3c8433/scroll-choice-1.0.1-javadoc.jar!/" />
